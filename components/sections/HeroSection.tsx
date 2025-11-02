@@ -40,7 +40,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+    <section className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+      
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -54,31 +57,40 @@ export default function HeroSection() {
             src={slide.image}
             alt={slide.title}
             fill
-            className="object-cover transition-transform duration-700"
+            className="object-cover transition-transform duration-1000 scale-110"
             priority={index === 0}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/70 via-black/60 to-secondary-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className={`container mx-auto px-4 text-center text-white transition-all duration-700 ${
               index === currentSlide 
                 ? "animate-fade-in-up opacity-100" 
                 : "opacity-0"
             }`}>
-              <div className="mb-6 inline-block">
-                <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm md:text-base font-semibold animate-fade-in-up">
-                  Giải pháp kính hàng đầu
+              <div className="mb-6 inline-block animate-fade-in-up">
+                <span className="inline-block px-6 py-3 glass-card rounded-full text-sm md:text-base font-semibold text-white shadow-xl border border-white/30">
+                  <span className="inline-flex items-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Giải pháp kính hàng đầu
+                  </span>
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up [animation-delay:0.1s]">
-                <span className="drop-shadow-2xl">{slide.title}</span>
+              <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold mb-6 animate-fade-in-up [animation-delay:0.1s]">
+                <span className="drop-shadow-2xl bg-gradient-to-r from-white via-white to-gray-200 bg-clip-text text-transparent">
+                  {slide.title}
+                </span>
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:0.2s]">
+              <p className="text-xl md:text-2xl lg:text-3xl mb-10 max-w-3xl mx-auto leading-relaxed font-light text-white/95 animate-fade-in-up [animation-delay:0.2s] drop-shadow-lg">
                 {slide.subtitle}
               </p>
-              <div className="animate-fade-in-up [animation-delay:0.3s]">
-                <Button href={slide.ctaLink} variant="primary" className="hover-glow">
+              <div className="animate-fade-in-up [animation-delay:0.3s] flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button href={slide.ctaLink} variant="primary" className="hover-glow px-8 py-4 text-lg shadow-2xl">
                   {slide.cta}
+                </Button>
+                <Button href="/contact" variant="outline" className="px-8 py-4 text-lg border-white/50 text-white hover:bg-white/10 backdrop-blur-sm">
+                  Liên hệ ngay
                 </Button>
               </div>
             </div>
