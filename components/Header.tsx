@@ -28,31 +28,26 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
-      <nav className="container mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-300 hover:scale-105 transform inline-block">
-            <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-              ThienPhu
-            </span>
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          <Link href="/" className="text-xl lg:text-2xl font-semibold text-gray-900 hover:text-gray-700 transition-colors">
+            ThienPhu
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative ${
+                className={`text-sm font-medium transition-colors ${
                   isActive(item.href)
-                    ? "text-primary-600 bg-primary-50 font-semibold"
-                    : "text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                    ? "text-gray-900 border-b-2 border-gray-900 pb-1"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                <span className="relative z-10">{item.name}</span>
-                {isActive(item.href) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full"></span>
-                )}
+                {item.name}
               </Link>
             ))}
           </div>

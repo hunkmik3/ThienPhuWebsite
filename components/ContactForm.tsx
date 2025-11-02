@@ -57,7 +57,7 @@ export default function ContactForm() {
             required
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300"
+            className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all bg-white"
             placeholder="Nhập họ và tên của bạn"
           />
         </div>
@@ -73,7 +73,7 @@ export default function ContactForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300"
+            className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all bg-white"
           />
         </div>
 
@@ -88,7 +88,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300"
+            className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all bg-white"
           />
         </div>
 
@@ -102,7 +102,7 @@ export default function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300"
+            className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all bg-white"
           />
         </div>
       </div>
@@ -118,33 +118,29 @@ export default function ContactForm() {
           rows={6}
           value={formData.content}
           onChange={handleChange}
-          className="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white/50 backdrop-blur-sm hover:border-gray-300 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 focus:ring-1 focus:ring-gray-900 focus:border-gray-900 transition-all bg-white resize-none"
           placeholder="Nhập nội dung tin nhắn..."
         />
       </div>
 
       {submitStatus === "success" && (
-        <div className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 text-green-800 rounded-xl shadow-lg animate-fade-in-up">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <span className="font-semibold">Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.</span>
+        <div className="p-4 bg-green-50 border border-green-200 text-green-800">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.</span>
           </div>
         </div>
       )}
 
       {submitStatus === "error" && (
-        <div className="p-6 bg-gradient-to-r from-red-50 to-rose-50 border-2 border-red-200 text-red-800 rounded-xl shadow-lg animate-fade-in-up">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-            <span className="font-semibold">Có lỗi xảy ra. Vui lòng thử lại sau.</span>
+        <div className="p-4 bg-red-50 border border-red-200 text-red-800">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span>Có lỗi xảy ra. Vui lòng thử lại sau.</span>
           </div>
         </div>
       )}
@@ -152,7 +148,7 @@ export default function ContactForm() {
       <Button
         type="submit"
         variant="primary"
-        className="w-full py-4 text-lg shadow-xl hover:shadow-2xl"
+        className="w-full py-3"
       >
         {isSubmitting ? (
           <span className="flex items-center gap-2">
