@@ -6,8 +6,8 @@ export default function PartnersPreview() {
   const featuredPartners = partners.slice(0, 6);
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-4">
             Đối tác quốc tế
