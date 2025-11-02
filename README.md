@@ -2,6 +2,12 @@
 
 Website demo cho Công ty ThienPhu - Nhà sản xuất kính cường lực và các giải pháp kính cao cấp.
 
+🌐 **Live Demo:** [Đang deploy trên Vercel](https://thienphuwebsite.vercel.app)
+
+## 📋 Tổng quan
+
+Website demo được xây dựng bằng Next.js 14 với App Router, TypeScript, và Tailwind CSS. Website bao gồm đầy đủ các trang theo sitemap với animations hiện đại và UI/UX tối ưu.
+
 ## Công nghệ sử dụng
 
 - **Next.js 14** (App Router)
@@ -73,10 +79,44 @@ Mở [http://localhost:3000](http://localhost:3000) để xem website.
 9. **Đối tác quốc tế** - Danh sách đối tác theo khu vực
 10. **Liên hệ** - Thông tin văn phòng/nhà máy và form liên hệ
 
-## Notes
+## 🚀 Deploy lên Vercel
+
+### Cách 1: Deploy tự động qua GitHub (Khuyến nghị)
+
+1. Đăng nhập vào [Vercel](https://vercel.com)
+2. Click **"New Project"**
+3. Import repository `ThienPhuWebsite` từ GitHub
+4. Vercel sẽ tự động detect Next.js project
+5. Click **"Deploy"** - Vercel sẽ tự động build và deploy
+
+### Cách 2: Deploy qua Vercel CLI
+
+```bash
+# Cài đặt Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Deploy production
+vercel --prod
+```
+
+### Cấu hình Environment Variables (nếu cần)
+
+Trong Vercel Dashboard → Settings → Environment Variables:
+- Thêm các biến môi trường cần thiết (nếu có)
+
+## 📝 Notes
 
 - Website này là bản demo sử dụng dummy data
 - Cần thay thế placeholder images bằng hình ảnh thực tế
-- Cần cấu hình Google Maps API keys cho bản đồ
+- Cần cấu hình Google Maps API keys cho bản đồ (nếu cần)
 - Form liên hệ hiện chỉ là demo, cần tích hợp backend để xử lý thực tế
+- Vercel sẽ tự động build và deploy mỗi khi có commit mới lên branch `main`
+
+## 🔗 Links
+
+- GitHub Repository: https://github.com/hunkmik3/ThienPhuWebsite
+- Vercel Dashboard: https://vercel.com/dashboard
 
